@@ -18,6 +18,21 @@ body {
   background-size: cover;
 }
 
+#jumbNewsColor {
+  margin-bottom: 1px;
+  line-height: 1.4;
+  background: rgba(76, 76, 76, 0.85); /* Цвет фона */
+    color: #fff; /* Цвет текста */
+}
+
+#jumbNewsImg {
+  background: url('/static/style2/img/news.jpg') center center no-repeat fixed ;
+   -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
 
 
 

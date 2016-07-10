@@ -8,6 +8,7 @@ __pycache__/
 
 #Pycharm
 *.idea
+settings_dev.py
 
 # Distribution / packaging
 .Python

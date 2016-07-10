@@ -120,5 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATICFILES_DIRS = (BASE_DIR, 'static')
+try:
+    from razvitie.settings_dev import *
+except: pass
 STATIC_URL = '/static/'
