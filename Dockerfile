@@ -38,6 +38,6 @@ COPY razvitie/ /opt/razvitie/app/
 WORKDIR /opt/razvitie/app
 ENV STATIC_ROOT=/opt/razvitie/app/static
 RUN nginx -t 
-RUN python3 -c 'import compileall, os; compileall.compile_dir(os.curdir, force=1)' > /dev/null \
-	&& ./manage.py collectstatic --settings=razvitie.settings_prod --no-input -v0
+RUN python3 -c 'import compileall, os; compileall.compile_dir(os.curdir, force=1)' > /dev/null 
+#	&& ./manage.py collectstatic --settings=razvitie.settings_prod --no-input -v0
 CMD ["circusd", "/etc/circus/web.ini"]
