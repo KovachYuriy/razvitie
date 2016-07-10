@@ -1,0 +1,24 @@
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.jumbotronMain {
+  margin-bottom: 1px;
+  line-height: 6;
+  background: rgba(245, 116, 10, 0.85); /* Цвет фона */
+    color: #fff; /* Цвет текста */
+}
+
+#colorJumbotron {
+  background: url('/static/style2/img/wheat-3.jpg') center center no-repeat fixed ;
+   -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+
+
+
+
