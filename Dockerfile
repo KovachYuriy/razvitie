@@ -13,6 +13,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
         python3-pip \
         python3-setuptools \
         python3-psycopg2 \
+		vim \
 
     && BUILD_DEPS='build-essential python3-dev' \
     && apt-get install -y --no-install-recommends ${BUILD_DEPS} \
@@ -35,8 +36,8 @@ COPY etc/ /etc/
 COPY razvitie/ /opt/razvitie/app/
 
 WORKDIR /opt/razvitie/app
-ENV STATIC_ROOT=/opt/razvitie/static
-RUN nginx -t \
-    && python3 -c 'import compileall, os; compileall.compile_dir(os.curdir, force=1)' > /dev/null \
-    && ./manage.py collectstatic --settings=razvitie.settings --no-input -v0
+ENV STATIC_ROOT=/opt/razvitie/app/static
+RUN nginx -t 
+RUN python3 -c 'import compileall, os; compileall.compile_dir(os.curdir, force=1)' > /dev/null 
+RUN python3 manage.py collectstatic --settings=razvitie.settings --no-input -v0
 CMD ["circusd", "/etc/circus/web.ini"]
